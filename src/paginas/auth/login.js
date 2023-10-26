@@ -10,7 +10,7 @@ const Login = () => {
       <div className="card">
         <div className="card-body login-card-body">
           <p className="login-box-msg">Ingresa tus datos para iniciar sesión</p>
-          <form action="../../index3.html" method="post">
+          <form action="../pages" method="post">
             <div className="input-group mb-3">
               <input type="email" className="form-control" placeholder="Ingresar correo" id="email" name="email" />
               <div className="input-group-append">
