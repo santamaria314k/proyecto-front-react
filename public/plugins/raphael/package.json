@@ -18,7 +18,7 @@
   "devDependencies": {
     "qunitjs": "^1.0.0",
     "webpack": "4.39.2",
-    "webpack-cli": "3.3.6"
+    "webpack-cli": "^3.3.6"
   },
   "scripts": {
     "start": "yarn build-all",
