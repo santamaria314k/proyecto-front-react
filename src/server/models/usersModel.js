@@ -19,6 +19,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "La contraseña es requerida"],
         maxlength: [20, "Contraseña  no debe ser mayor de 20 caracteres"]
+    },
+    rol: {
+        type: Number,
+        required: [false, "El rol de Usuario es requrido"],
+        maxlength: [2, "rol  no debe ser mayor de 1 caracteres"]
     }
 });
 

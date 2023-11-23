@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+const DashboardAccesor = () => {
   return (
 <div>
       {/* Topbar Start */}
@@ -40,7 +40,7 @@ const Dashboard = () => {
         <div className="row py-3 px-lg-5">
         <div classname="col-lg-4">
   <link to="/" classname="navbar-brand d-none d-lg-block" />
-  <h1 className="text-primary"> <span className="text-light">TIKETS</span>  <span classname="text-primary">    agendamiento</span> </h1><h1><span className="text-light">chats-online</span>
+  <h1 className="text-light"> <span classname="text-light">Asesor en linea</span> </h1><h1>
   </h1></div>
 
           <div className="col-lg-8 text-center text-lg-right">
@@ -50,7 +50,7 @@ const Dashboard = () => {
                 <p className="m-0">8.00AM - 9.00PM</p>
               </div>
               <div className="d-inline-flex flex-column text-center px-3 border-right">
-                <h6>Email</h6>
+                <h6>Email </h6>
                 <p className="m-0">Tustikets.com</p>
               </div>
               <div className="d-inline-flex flex-column text-center pl-3">
@@ -67,15 +67,14 @@ const Dashboard = () => {
       <div className="container-fluid p-0">
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
           <Link to="#" className="navbar-brand d-block d-lg-none">
-            <h1 className="m-0 display-5 text-capitalize font-italic text-primary"><span className="text-light">TIKETS</span>agendamiento </h1>
+            <h1 className="m-0 display-5 text-capitalize font-italic text-white"><span className="text-primary">TIKETS</span>agendamiento</h1>
           </Link>
           <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
-              <Link to="/dashboard" className="nav-item nav-link">Home</Link>
-              <Link to="#" className="nav-item nav-link">About</Link>
+              <Link to="/listadoUsuarios" className="nav-item nav-link">Usuarios</Link>
               <Link to="#" className="nav-item nav-link">Service</Link>
               <Link to="#" className="nav-item nav-link">Price</Link>
               <Link to="#" className="nav-item nav-link">Booking</Link>
@@ -92,45 +91,33 @@ const Dashboard = () => {
           </div>
         </nav>
       </div>
-      
-      
+      {/* Navbar End */}
+      {/* Blog Start */}
       <div className="container pt-5">
         <div className="d-flex flex-column text-center mb-5 pt-5">
           <h4 className="text-secondary mb-3">Agendamiento</h4>
-          <h1 className="display-4 m-0"><span className="text-primary">Reserva </span> <samp className="text-light">TU</samp>   <span className="text-primary">   Cita   </span>   </h1>
+          <h1 className="display-4 m-0">  <span className="text-primary">   CHATS EN LINEA </span>   </h1>
         </div>
         <div className="row pb-3">
-         
-         
-
-
-          <div className="col-lg-4 mb-4">
-            <div className="card border-0 mb-2">
-              <img className="card-img-top" src="img/blog-1.jpg" alt="" />
-              <div className="card-body bg-light p-4">
-                <h4 className="card-title text-truncate">Un Asesor Puede Atender <br></br> tus Solicitusdes </h4>
-                <div className="d-flex mb-3">
-                  <small className="mr-2"><i className="fa fa-user text-muted" /> User</small>
-                  <small className="mr-2"><i className="fa fa-folder text-muted" /> Web Design</small>
-                  <small className="mr-2"><i className="fa fa-comments text-muted" /> chat</small>
-                </div>
-              <Link  to="/chatUser">   <button className="buttonchat"> Iniciar un chat</button>  </Link>
-
-              
-
+          
               </div>
             </div>
           </div>
 
 
 
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
 
           
 
     );
 }
 
-export default Dashboard;
+export default DashboardAccesor;

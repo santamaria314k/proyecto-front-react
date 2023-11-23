@@ -8,7 +8,7 @@ const Login = () => {
 
     <div className="login-box">
       <div className="login-logo">
-        <h1><b>Inicio de  </b>sesión </h1>
+        <h1 className="text-primary"><b>Inicio de  </b>sesión </h1>
       </div>
       <div className="card">
         <div className="card-body login-card-body">
@@ -37,7 +37,7 @@ const Login = () => {
               </div>
             </div>
             <div className="text-center">
-            <Link to="/dashboard.js" >  <button type="submit"   className="btn btn-outline-info">Ingresar</button></Link>
+            <Link to="/dashboard" >  <button type="submit"   className="btn btn-outline-info">Ingresar</button></Link>
             </div>
             <p className="mt-3 text-center">
                  <Link  to="/crear-cuenta"> <button type="submit"    className="btn btn-outline-info">Crear una Cuenta</button></Link>

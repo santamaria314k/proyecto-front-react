@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import swal from 'sweetalert';
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +9,9 @@ const CrearCuenta = () => {
     password2: "",
   });
 
-
+  const [responseMessage, setResponseMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -20,22 +19,51 @@ const CrearCuenta = () => {
       const response = await fetch("http://localhost:4500/users/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         mode: "cors",
         credentials: "include",
         body: JSON.stringify(formData),
-        
-  
       });
   
-
-     
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
-    }
-  };
+      console.log(response);
   
+      if (response.ok) {
+        if (response.status === 200) {
+          setResponseMessage("Registro exitoso");
+          setIsSuccess(true);
+        } else {
+          setResponseMessage("¡Registrado!");
+          setIsSuccess(true);
+        }
+      } else {
+        console.error("Error al enviar el formulario");
+  
+        let errorMessage = "Error en la solicitud";
+  
+        // Verificar si la respuesta tiene un cuerpo
+        if (response.status !== 204) {
+          try {
+            const errorData = await response.json();
+            errorMessage = JSON.stringify(errorData, null, 2);
+          } catch (error) {
+            console.error("Error de la respuesta typ json:", error);
+            errorMessage = "error del servidor";
+          }
+        }
+  
+        setResponseMessage(errorMessage);
+        setIsSuccess(false);
+      }
+    } catch (error) {
+      console.error("Error ", error);
+      setResponseMessage(`Error  ${error.message}`);
+      setIsSuccess(false);
+    }
+  }
+  
+  
+
 
   const handleChange = (e) => {
     setFormData({
@@ -43,34 +71,11 @@ const CrearCuenta = () => {
       [e.target.name]: e.target.value,
     });
 
-   
     if (e.target.name === "password2" && formData.password1 !== e.target.value) {
-      
-      const msg ="las contraseñas son diferentes";
-      swal({
-        title:'Error',
-        text:msg,
-        icon:'error',
-        buttons:{
-          confirm:{
-            text:"ok",
-            value:true,
-            visible:true,
-            className:'btn btn-danger',
-            closeModal:true
-
-          }
-        }
-      });
-
-    }else{
-
+      setPasswordError("Las contraseñas no coinciden");
+    } else {
+      setPasswordError("");
     }
-
-   
-
-
-
   };
 
   return (
@@ -154,6 +159,17 @@ const CrearCuenta = () => {
                 </div>
               </div>
 
+              {passwordError && <p className="text-danger">{passwordError}</p>}
+
+              {responseMessage && (
+                <div>
+                  <p className={isSuccess ? "text-success" : "text-danger"}>
+                    {isSuccess ? "Registro exitoso" : "Error en el registro"}
+                  </p>
+                  <pre>{responseMessage}</pre>
+                </div>
+              )}
+
               <div className="text-center">
                 <button type="submit" className="btn btn-outline-info">
                   Registrar
@@ -175,4 +191,3 @@ const CrearCuenta = () => {
 };
 
 export default CrearCuenta;
-

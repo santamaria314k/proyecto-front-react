@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+const chatUser = () => {
   return (
 <div>
       {/* Topbar Start */}
@@ -39,9 +39,9 @@ const Dashboard = () => {
         </div>
         <div className="row py-3 px-lg-5">
         <div classname="col-lg-4">
-  <link to="/" classname="navbar-brand d-none d-lg-block" />
-  <h1 className="text-primary"> <span className="text-light">TIKETS</span>  <span classname="text-primary">    agendamiento</span> </h1><h1><span className="text-light">chats-online</span>
-  </h1></div>
+        <h1><span className="text-light">chats-online</span>     <span className="text-primary">Chat-Cliente</span>   </h1>
+
+ </div>
 
           <div className="col-lg-8 text-center text-lg-right">
             <div className="d-inline-flex align-items-center">
@@ -87,45 +87,27 @@ const Dashboard = () => {
                 </div>
               </div>
               <Link to="/contact" className="nav-item nav-link">Contactanos</Link>
-            </div>
+            </div> 
             <Link to="#" className="btn btn-lg btn-primary px-3 d-none d-lg-block">LOGOUT</Link>
           </div>
         </nav>
       </div>
       
       
-      <div className="container pt-5">
-        <div className="d-flex flex-column text-center mb-5 pt-5">
-          <h4 className="text-secondary mb-3">Agendamiento</h4>
-          <h1 className="display-4 m-0"><span className="text-primary">Reserva </span> <samp className="text-light">TU</samp>   <span className="text-primary">   Cita   </span>   </h1>
-        </div>
-        <div className="row pb-3">
-         
-         
-
-
-          <div className="col-lg-4 mb-4">
-            <div className="card border-0 mb-2">
-              <img className="card-img-top" src="img/blog-1.jpg" alt="" />
-              <div className="card-body bg-light p-4">
-                <h4 className="card-title text-truncate">Un Asesor Puede Atender <br></br> tus Solicitusdes </h4>
-                <div className="d-flex mb-3">
-                  <small className="mr-2"><i className="fa fa-user text-muted" /> User</small>
-                  <small className="mr-2"><i className="fa fa-folder text-muted" /> Web Design</small>
-                  <small className="mr-2"><i className="fa fa-comments text-muted" /> chat</small>
-                </div>
-              <Link  to="/chatUser">   <button className="buttonchat"> Iniciar un chat</button>  </Link>
-
-              
-
-              </div>
-            </div>
-          </div>
 
 
 
-        </div>
-      </div>
+
+<br />
+<br />
+<br />     
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+   
     </div>
 
           
@@ -133,4 +115,4 @@ const Dashboard = () => {
     );
 }
 
-export default Dashboard;
+export default chatUser;

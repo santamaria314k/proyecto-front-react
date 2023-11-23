@@ -63,17 +63,32 @@ return res.json(
 //3.crear  los users
 
 router.post(('/'),  async (req,res)=>{
-
+ try{
+   
     //guardar el user  del body
    const newUser= await User.create(req.body)
-    return res.json(
+   
+    return res.status(200).json(
         {
             success:true,
-             data:newUser
+            msg:`Registro Exitoso`,
+            data:newUser
         }
     )
 
-})
+}catch(error) {
+        
+    res.status(500).json({
+    success:false,
+    msg:`Èrror encontrado: ${error.message}`
+    
+    })
+    
+    
+      }
+    
+    }
+)
 
 
 
@@ -83,29 +98,30 @@ router.post(('/'),  async (req,res)=>{
 
 
 //4. actulizar  users por id
-router.put('/:id',  async(req,res)=>{
-
-   const userId=req.params.id
-    
-   const updUser=await User.findByIdAndUpdate(
-    userId,
-    req.body,
-
-    {
-        new:true,
+router.put('/:id', async (req, res) => {
+    const userId = req.params.id;
+  
+    try {
+      const updUser = await User.findByIdAndUpdate(
+        userId,
+        req.body,
+        {
+          new: true,
+        }
+      );
+  
+      return res.json({
+        success: true,
+        data: updUser,
+      });
+    } catch (error) {
+      console.error('Error al actualizar el usuario:', error);
+      return res.status(500).json({
+        success: false,
+        error: 'Error interno del servidor',
+      });
     }
-
-   )
-
-return res.json(
-    {
-    success:true,
-    data :updUser
-    }
-)
-
-
-})
+  });
 
 
 
