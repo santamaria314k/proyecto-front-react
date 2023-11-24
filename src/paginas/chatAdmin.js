@@ -1,8 +1,30 @@
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import io from 'socket.io-client';
 
-const chatAdmin = () => {
+const socket = io('http://localhost:4500');
+
+function App() {
+  const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState('');
+
+  useEffect(() => {
+    socket.on('chat message', (message) => {
+      setMessages([...messages, message]);
+    });
+  }, [messages]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputMessage) {
+      socket.emit('chat message', inputMessage);
+      setInputMessage('');
+    }
+  };
+
+
+
   return (
 <div>
       {/* Topbar Start */}
@@ -75,21 +97,21 @@ const chatAdmin = () => {
           </button>
           <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
-              <Link to="/dashboardAsesor" className="nav-item nav-link">Home</Link>
+              <Link to="/dashboardAsesor" className="nav-item nav-link">Menu Accesor</Link>
               <Link to="/listadoUsuarios" className="nav-item nav-link">Usuarios</Link>
-              <Link to="#" className="nav-item nav-link">Service</Link>
-              <Link to="#" className="nav-item nav-link">Price</Link>
-              <Link to="#" className="nav-item nav-link">Booking</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
               <div className="nav-item dropdown">
-                <Link to="#" className="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</Link>
+                <Link to="#" className="nav-link dropdown-toggle active" data-toggle="dropdown">🎫-tiket-react</Link>
                 <div className="dropdown-menu rounded-0 m-0">
-                  <Link to="#" className="dropdown-item">Blog Grid</Link>
-                  <Link to="#" className="dropdown-item">Blog Detail</Link>
+                  <Link to="#" className="dropdown-item">🎫-tiket-react</Link>
+                  <Link to="#" className="dropdown-item">🎫-tiket-react</Link>
                 </div>
               </div>
-              <Link to="#" className="nav-item nav-link">Contactanos</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
             </div>
-            <Link to="#" className="btn btn-lg btn-primary px-3 d-none d-lg-block">LOGOUT</Link>
+            <Link to="/" className="btn btn-lg btn-primary px-3 d-none d-lg-block">LOGOUT</Link>
           </div>
         </nav>
       </div>
@@ -98,15 +120,31 @@ const chatAdmin = () => {
 
 
 
-<br />
-<br />
-<br />     
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
+
+      <div className="App">
+        <div className="chat-container">
+          <div className="chat-messages">
+            {messages.map((message, index) => (
+              <div key={index} className="message">
+                {message}
+              </div>
+            ))}
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Ingresa un mensaje..."
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+            />
+            <button  className='btn btn-outline-success' type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+
+
     </div>
 
           
@@ -114,4 +152,4 @@ const chatAdmin = () => {
     );
 }
 
-export default chatAdmin;
+export default App;

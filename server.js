@@ -2,6 +2,7 @@ const express = require('express')
 
 const dotenv = require('dotenv')
 
+const bodyParser = require('body-parser');
 
 const connectDB =require('./src/config/db.js')
 
@@ -34,9 +35,11 @@ app.use((req, res, next) => {
   });
   
 
-app.options('/users', cors(corsOptions));
+app.options('/', cors(corsOptions));
 
 
+
+app.use(bodyParser.json());
 
 
 //dependencia de formateo  body
@@ -61,6 +64,7 @@ const usersRoutes = require('./src/server/routes/UsersRoutes.js')
 
 app.use('/users',usersRoutes)
 
+app.use('/users/login',usersRoutes)
 
 
 // definir el puerto del servidor 

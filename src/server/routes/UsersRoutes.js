@@ -3,6 +3,7 @@ const express = require('express');
 
 const User= require("../models/usersModel.js")
 
+// const bcrypt = require('bcrypt');
 
 //definir rutas con la aplicasion principal
 const router = express.Router()
@@ -146,6 +147,28 @@ data:[]
 
 
 
+
+
+
+//routes login
+
+
+// Inicio de sesión
+
+router.post('/login', async (req, res) => {
+  const { email, password1 } = req.body;
+
+  try {
+    const user = await User.findOne({ email, password1 });
+    if (!user) {
+      res.status(404).json({ success: false, message: 'Usuario no encontrado.' });
+    } else {
+      res.status(200).json({ success: true, __v: user.__v });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
 
 
 

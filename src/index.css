@@ -52,14 +52,12 @@ border-radius: 9px;
 
 
 
-/* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos del sidebar */
 #sidebar {
   height: 100%;
   width: 250px;
@@ -95,7 +93,6 @@ border-radius: 9px;
   padding: 10px;
 }
 
-/* Estilos del botón para alternar el sidebar */
 #sidebarCollapse {
   background-color: #333;
   color: #fff;
@@ -112,20 +109,19 @@ border-radius: 9px;
   outline: none;
 }
 
-/* Estilos del contenido principal */
+
+
 #content {
   margin-left: 0;
   transition: all 0.3s;
 }
 
-/* Estilos de la barra de navegación */
 .navbar {
   background-color: #fff;
   padding: 15px;
   border-bottom: 1px solid #ccc;
 }
 
-/* Estilos del contenido en el contenedor */
 .container {
   margin-top: 20px;
   padding: 20px;
@@ -136,22 +132,51 @@ border-radius: 9px;
   margin-bottom: 10px;
 }
 
-/* Estilos para los enlaces del sidebar */
 .list-unstyled a:hover {
   background-color: #444;
 }
 
-/* Estilos de fuente */
 body {
   font-family: Arial, sans-serif;
 }
 
-/* Estilos del botón del sidebar */
 #sidebarCollapse:hover {
   background-color: #444;
 }
 
-/* Estilos de fuente para la cabecera */
 .sidebar-header h3 {
   font-size: 24px;
 }
+
+
+
+
+
+
+
+
+/* App.css */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  border: 1px solid black;
+  width: 300px;
+  padding: 16px;
+}
+
+.chat-messages {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 8px;
+}
+
+
+

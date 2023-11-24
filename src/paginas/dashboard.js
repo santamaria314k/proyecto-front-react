@@ -75,20 +75,20 @@ const Dashboard = () => {
           <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
               <Link to="/dashboard" className="nav-item nav-link">Home</Link>
-              <Link to="#" className="nav-item nav-link">About</Link>
-              <Link to="#" className="nav-item nav-link">Service</Link>
-              <Link to="#" className="nav-item nav-link">Price</Link>
-              <Link to="#" className="nav-item nav-link">Booking</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
               <div className="nav-item dropdown">
                 <Link to="#" className="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</Link>
                 <div className="dropdown-menu rounded-0 m-0">
-                  <Link to="/blog" className="dropdown-item">Blog Grid</Link>
-                  <Link to="/single" className="dropdown-item">Blog Detail</Link>
+                  <Link to="#" className="dropdown-item">🎫-tiket-react</Link>
+                  <Link to="#" className="dropdown-item">🎫-tiket-react</Link>
                 </div>
               </div>
-              <Link to="/contact" className="nav-item nav-link">Contactanos</Link>
+              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
             </div>
-            <Link to="#" className="btn btn-lg btn-primary px-3 d-none d-lg-block">LOGOUT</Link>
+            <Link to="/" className="btn btn-lg btn-primary px-3 d-none d-lg-block">LOGOUT</Link>
           </div>
         </nav>
       </div>

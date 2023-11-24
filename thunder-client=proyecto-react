@@ -1,0 +1,123 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "thunder-proyecto-react",
+    "dateExported": "2023-11-24T03:32:39.334Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6a992198-f7ed-4336-a441-99df1044d8b2",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "listar-users",
+            "url": "http://localhost:4500/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-19T03:50:22.326Z",
+            "modified": "2023-11-19T03:57:02.863Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d1c3669-bedd-47af-a73f-c89c9b0ed903",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "listar-ID-user",
+            "url": "http://localhost:4500/users/655989a0db8ed5ece28350fc",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-19T03:50:48.413Z",
+            "modified": "2023-11-19T04:06:35.198Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4cdf60c6-3c42-40d4-89ff-f3553ef62870",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "registrar-user",
+            "url": "http://localhost:4500/users/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-19T03:51:26.765Z",
+            "modified": "2023-11-23T15:58:00.796Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"goool\",\n  \"email\": \"nuevo@example.com\",\n  \"password1\": \"contrasena123\",\n  \"password2\": \"contrasena123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "824fbe76-091d-4001-bfcd-bdf4d82b74db",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "actualizar-user",
+            "url": "http://localhost:4500/users/65598c1ad1fb932ac67c48e9",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-19T03:52:15.021Z",
+            "modified": "2023-11-19T04:19:58.454Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"actualizado\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "90bf22e5-b4ad-4699-894f-282fcf82a915",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "eliminar-user",
+            "url": "http://localhost:4500/users/65598c1ad1fb932ac67c48e9",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-19T03:52:31.989Z",
+            "modified": "2023-11-19T04:20:35.018Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4835922f-3a6a-43a2-9388-75364423835c",
+            "colId": "45f1979d-43fd-41d5-9121-b04472a2e6b8",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:4500/users/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-11-24T00:16:13.734Z",
+            "modified": "2023-11-24T02:17:09.997Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"marioyepes@gmail.com\",\n  \"password1\":\"jjj\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
