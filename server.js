@@ -10,6 +10,7 @@ const cors = require('cors')
 
 
 
+
 // crear el objetro de la aplicasion 
 
 // Permitir solicitudes desde este origen
@@ -58,6 +59,11 @@ path:'./config/.env'
 
 
 
+
+
+
+
+
 //crear las uris de los users<<<<<<<<<<<<<<<<<<<<<
 
 const usersRoutes = require('./src/server/routes/UsersRoutes.js')
@@ -65,6 +71,8 @@ const usersRoutes = require('./src/server/routes/UsersRoutes.js')
 app.use('/users',usersRoutes)
 
 app.use('/users/login',usersRoutes)
+
+
 
 
 // definir el puerto del servidor 

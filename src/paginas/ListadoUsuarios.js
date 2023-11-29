@@ -243,7 +243,7 @@ class ListarUsuarios extends React.Component {
           <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
               <Link to="/dashboardAsesor" className="nav-item nav-link">Menu Asesor</Link>
-              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="/crear-cuenta" className="nav-item nav-link">Registrar Usuario</Link>
               <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
               <div className="nav-item dropdown">
                 <Link to="#" className="nav-link dropdown-toggle active" data-toggle="dropdown">🎫-tiket-react</Link>

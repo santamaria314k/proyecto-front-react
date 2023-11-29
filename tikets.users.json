@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "655f82de0719b7cb7b42193a"
+  },
+  "name": "marioyepes",
+  "email": "marioyepes@gmail.com",
+  "password1": "1234",
+  "password2": "j",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f83592fc79ffea1963f1a"
+  },
+  "name": "kevin stiven snatamacd",
+  "email": "kevinsantamaria625@gmail.com",
+  "password1": "g",
+  "password2": "g",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f83fa1adc9815e52ee06b"
+  },
+  "name": "kevin sas",
+  "email": "kevinsantamaria625@gmail.com",
+  "password1": "j",
+  "password2": "j",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f84435c315ae6476a5c0a"
+  },
+  "name": "kevin sat",
+  "email": "kevinsantamaria625@gmail.com",
+  "password1": "j",
+  "password2": "j",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f84afdf8deca197b654ed"
+  },
+  "name": "kevi",
+  "email": "kevinsantamaria625@gmail.com",
+  "password1": "44",
+  "password2": "44",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655fddcee3d53489848b24b6"
+  },
+  "name": "poakk",
+  "email": "marioyepes@gmail.com",
+  "password1": "jjj",
+  "password2": "jjj",
+  "__v": 1
+}]
