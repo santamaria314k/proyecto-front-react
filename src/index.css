@@ -163,23 +163,45 @@ body {
   height: 100vh;
 }
 
+
+
+
+
 .chat-container {
-  border: 1px solid black;
-  width: 300px;
-  padding: 16px;
+  border: 2px solid black;
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 800px;
+  top: 300px;
 }
 
 .chat-messages {
-  height: 200px;
+  flex: 1;
   overflow-y: auto;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
-.message {
-  margin-bottom: 8px;
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.mensaje {
+  flex: 1;
+  margin-right: 10px;
 }
 
 
 
 
 
-
+.mensaje{
+  width: 230px;
+  height: 250px;
+}

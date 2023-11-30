@@ -68,11 +68,14 @@ path:'./config/.env'
 
 const usersRoutes = require('./src/server/routes/UsersRoutes.js')
 
+const chatRoutes = require('./src/server/routes/ChatRoutes.js')
+
 app.use('/users',usersRoutes)
 
 app.use('/users/login',usersRoutes)
 
 
+app.use('/chat',chatRoutes)
 
 
 // definir el puerto del servidor 

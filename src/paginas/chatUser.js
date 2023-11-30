@@ -1,26 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import io from 'socket.io-client';
+import React, { useState , useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const socket = io('http://localhost:4500');
 
-function App() {
+const ChatUser=()=>{
+
+  const [formData, setFormData] = useState({
+    chat: ""
+  });
   const [messages, setMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState('');
 
   useEffect(() => {
-    socket.on('chat message', (message) => {
-      setMessages([...messages, message]);
-    });
-  }, [messages]);
+    const fetchMessages = async () => {
+      try {
+        const response = await fetch("http://localhost:4500/chat");
+        const responseData = await response.json();
+        if (responseData.success) {
+          setMessages(responseData.data);
+        } else {
+          console.error("Error al obtener mensajes:", responseData.msg);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
 
-  const handleSubmit = (e) => {
+    fetchMessages();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (inputMessage) {
-      socket.emit('chat message', inputMessage);
-      setInputMessage('');
+
+    try {
+      const response = await fetch("http://localhost:4500/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        mode: "cors",
+        credentials: "include",
+        body: JSON.stringify(formData),
+      });
+
+      const responseData = await response.json();
+      console.log(responseData);
+
+      // Actualizar los mensajes después de enviar uno nuevo
+      if (responseData.success) {
+        setMessages([...messages, responseData.data]);
+        setFormData({ chat: "" });
+      }
+
+    } catch (error) {
+      console.error("Error ", error);
     }
   };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      chat: e.target.value,
+    });
+  };
+
+
+
+
 
   return (
     <div>
@@ -109,28 +153,31 @@ function App() {
 
      
 
+      
+
       <div className="App">
         <div className="chat-container">
-          <div className="chat-messages">
-            {messages.map((message, index) => (
-              <div key={index} className="message">
-                {message}
+          <div className="chat-messages" style={{ height: "100px", overflowY: "auto", border: "1px solid black", padding: "100px",left:"120px" }}>
+            {messages.map((message) => (
+              <div key={message._id}>{message.chat}<br /><br /><br />
               </div>
             ))}
           </div>
           <form onSubmit={handleSubmit}>
             <input
+              placeholder="mensaje..."
               type="text"
-              placeholder="Ingresa un mensaje..."
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
+              value={formData.chat}
+              onChange={handleChange}
+              required
             />
             <button className='btn btn-outline-success' type="submit">Enviar</button>
           </form>
         </div>
       </div>
-    </div>
+
+      </div>
   );
 }
 
-export default App;
+export default ChatUser;
