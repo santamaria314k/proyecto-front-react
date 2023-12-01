@@ -70,6 +70,8 @@ const usersRoutes = require('./src/server/routes/UsersRoutes.js')
 
 const chatRoutes = require('./src/server/routes/ChatRoutes.js')
 
+const citasRoutes= require('./src/server/routes/CitasRoutes.js')
+
 app.use('/users',usersRoutes)
 
 app.use('/users/login',usersRoutes)
@@ -77,7 +79,7 @@ app.use('/users/login',usersRoutes)
 
 app.use('/chat',chatRoutes)
 
-
+app.use('/citas', citasRoutes)
 // definir el puerto del servidor 
 
 const puertoExpress = process.env.PUERTO_EXPRESS || 4500;

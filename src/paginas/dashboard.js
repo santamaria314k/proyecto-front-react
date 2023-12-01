@@ -74,8 +74,8 @@ const Dashboard = () => {
           </button>
           <div className="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
-              <Link to="/dashboard" className="nav-item nav-link">Home</Link>
-              <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
+              <Link to="/dashboard" className="nav-item nav-link">Menu</Link>
+              <Link to="/cita" className="nav-item nav-link">Agendar Cita</Link>
               <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
               <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>
               <Link to="#" className="nav-item nav-link">🎫-tiket-react</Link>

@@ -14,7 +14,7 @@ import ChatUser from './paginas/chatUser';
 
 import ListarUsuarios from './paginas/ListadoUsuarios';
 
-
+import Citas from './paginas/citas';
  
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path = "/crear-cuenta"exact element = {<CrearCuenta/>}/>
         <Route path = "/listadoUsuarios"exact element = {<ListarUsuarios/>}/>
 
+        <Route path = "/cita"exact element = {<Citas/>}/>
 
 
       </Routes>

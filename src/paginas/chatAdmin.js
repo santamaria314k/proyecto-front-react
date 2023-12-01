@@ -193,7 +193,7 @@ const ChatAdmin = () => {
         <div className="chat-container">
           <div className="chat-messages" style={{ height: "100px", overflowY: "auto", border: "1px solid black", padding: "100px",left:"120px" }}>
             {messages.map((message) => (
-              <div key={message._id}>{message.chat}</div>
+              <div key={message._id}>{message.chat}  <br /><br /><br />     </div>
             ))}
           </div>
           <form onSubmit={handleSubmit}>

@@ -81,7 +81,7 @@ router.post(('/'),  async (req,res)=>{
         
     res.status(500).json({
     success:false,
-    msg:`Èrror encontrado: ${error.message}`
+    msg:`ya existe un usario con ese email: ${error.message}`
     
     })
     
