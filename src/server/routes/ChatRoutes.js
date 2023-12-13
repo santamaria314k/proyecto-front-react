@@ -63,4 +63,41 @@ router.post(('/'),  async (req,res)=>{
     }
   });
 
+
+
+
+
+
+
+//4. actulizar  chats 
+router.put('/:id', async (req, res) => {
+  const chatId = req.params.id;
+
+  try {
+    const updChat = await Chat.findByIdAndUpdate(
+      chatId,
+      req.body,
+      {
+        new: true,
+      }
+    );
+
+    return res.json({
+      success: true,
+      data: updChat,
+    });
+  } catch (error) {
+    console.error('Error al actualizar el usuario:', error);
+    return res.status(500).json({
+      success: false,
+      error: 'Error interno del servidor',
+    });
+  }
+});
+
+
+
+
+
+
    module.exports=router

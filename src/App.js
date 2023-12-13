@@ -34,7 +34,7 @@ function App() {
         <Route path = "/crear-cuenta"exact element = {<CrearCuenta/>}/>
         <Route path = "/listadoUsuarios"exact element = {<ListarUsuarios/>}/>
 
-        <Route path = "/cita"exact element = {<Citas/>}/>
+        <Route   path = "/cita"exact element = {<Citas/>}/>
 
 
       </Routes>
